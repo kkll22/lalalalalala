@@ -2,8 +2,7 @@ name: PR Test
 
 on: 
 	pull_request:
-    	branches:
-        	- main 
+    	branches:[main]
 
 jobs: 
 	Run Jest:
