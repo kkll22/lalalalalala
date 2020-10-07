@@ -34,5 +34,6 @@ jobs:
             await github.pulls.update({
               ...context.repo,
               pull_number,
-              state: "closed"})
-      if: failure()
+              state: "closed" 
+            })
+          if: failure()
