@@ -2,14 +2,14 @@ name: PR Test
 on: 
 	pull_request:   
     	branches:
-        	- test 
+        	- main 
 
 jobs: 
 	Run Jest:
     	runs-on: [ubuntu-latest] 
         strategy:
           matrix:
-            node-version: [8.x, 10.x, 12.x] 
+            node-version: [12.x] 
         steps: 
          - uses: actions/checkout@v2
          - name: npm install
