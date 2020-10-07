@@ -1,22 +1,23 @@
 name: PR Test
 
 on: 
-	pull_request:
-    	branches: [main]
+  pull_request:
+      branches: [ main ]
 
 jobs: 
-	Run Jest:
-    	runs-on: [ubuntu-latest] 
+  Run Jest:
+      runs-on: [ubuntu-latest] 
         strategy:
           matrix:
             node-version: [12.x] 
         steps: 
-         - uses: actions/checkout@v2
+         - name: checkout 
+           uses: actions/checkout@v2
          - name: npm install
            run: npm install
          - name: run test code
            run: npm test
-		 - name: if fail
+         - name: if fail
            uses: actions/github-script@0.2.0 
            with:
               github-token: ${{github.token}} 
